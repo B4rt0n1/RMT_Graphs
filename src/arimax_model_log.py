@@ -90,7 +90,7 @@ def run_arimax_forecast(ram_q, title, color_hist, color_pred, graph_filename, cs
     arimax_res = pd.Series(forecast_abs_arimax, index=future_dates, name='RAM_Price_Forecast')
 
     # --- Save forecast data to CSV ---
-    arimax_res.to_frame(name='RAM_Price_Forecast').to_csv(CSV_DIR / csv_filename)
+    arimax_res.to_frame(name='RAM_Price_Forecast').to_csv(CSV_DIR / csv_filename, index_label='Date')
     print(f"[ARIMAX {title}] Forecast saved -> {CSV_DIR / csv_filename}")
 
     # --- Plot ---

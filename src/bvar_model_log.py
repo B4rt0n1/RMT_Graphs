@@ -89,7 +89,7 @@ def run_bvar_forecast(ram_q, title, color_hist, color_pred, graph_filename, csv_
     bvar_forecast_df = pd.DataFrame(forecast_abs, index=future_dates, columns=df_merged.columns)
 
     # --- Save forecast data to CSV ---
-    bvar_forecast_df.to_csv(CSV_DIR / csv_filename)
+    bvar_forecast_df.to_csv(CSV_DIR / csv_filename, index_label='Date')
     print(f"[BVAR {title}] Forecast saved -> {CSV_DIR / csv_filename}")
 
     # --- Plot ---

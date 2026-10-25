@@ -39,7 +39,7 @@ def plot_and_save_holt(data, title, color_hist, color_pred, graph_filename, csv_
     forecast.name = 'RAM_Price_Forecast'
 
     # --- Save forecast data to CSV ---
-    forecast.to_frame().to_csv(CSV_DIR / csv_filename)
+    forecast.to_frame().to_csv(CSV_DIR / csv_filename, index_label='Date')
     print(f"[Holt {title}] Forecast saved -> {CSV_DIR / csv_filename}")
 
     # --- Plotting ---
